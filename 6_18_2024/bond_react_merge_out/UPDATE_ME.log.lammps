@@ -1,0 +1,159 @@
+restart         2000 rst1.a.${myid} rst2.a.${myid}
+restart         2000 rst1.a.UPDATE_ME rst2.a.${myid}
+restart         2000 rst1.a.UPDATE_ME rst2.a.UPDATE_ME
+
+
+#------------Run------------
+run             6000
+
+CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE
+
+Your simulation uses code contributions which should be cited:
+
+- fix bond/react: reacter.org doi:10.1016/j.polymer.2017.09.038, doi:10.1021/acs.macromol.0c02012
+
+@Article{Gissinger17,
+ author = {J. R. Gissinger and B. D. Jensen and K. E. Wise},
+ title = {Modeling Chemical Reactions in Classical Molecular Dynamics Simulations},
+ journal = {Polymer},
+ year =    2017,
+ volume =  128,
+ pages =   {211--217}
+}
+
+@Article{Gissinger20,
+ author = {J. R. Gissinger, B. D. Jensen, K. E. Wise},
+ title = {{REACTER}: A Heuristic Method for Reactive Molecular Dynamics},
+ journal = {Macromolecules},
+ year =    2020,
+ volume =  53,
+ number =  22,
+ pages =   {9953--9961}
+}
+
+CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE
+
+PPPM initialization ...
+  using 12-bit tables for long-range coulomb (src/kspace.cpp:342)
+  G vector (1/distance) = 0.16255007
+  grid = 5 5 3
+  stencil order = 5
+  estimated absolute RMS force accuracy = 0.020700096
+  estimated relative force accuracy = 6.2337725e-05
+  using double precision FFTW3
+  3d grid and FFT values/proc = 800 75
+Generated 66 of 66 mixed pair_coeff terms from sixthpower/sixthpower mixing rule
+Neighbor list info ...
+  update: every = 1 steps, delay = 0 steps, check = yes
+  max neighbors/atom: 5000, page size: 100000
+  master list distance cutoff = 14
+  ghost atom cutoff = 14
+  binsize = 7, bins = 5 3 1
+  2 neighbor lists, perpetual/occasional/extra = 1 1 0
+  (1) pair lj/class2/coul/long, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d
+      bin: standard
+  (2) fix bond/react, occasional, copy from (1)
+      attributes: half, newton on
+      pair build: copy
+      stencil: none
+      bin: none
+WARNING: Bond/angle/dihedral extent > half of periodic box length (src/domain.cpp:936)
+Per MPI rank memory allocation (min/avg/max) = 58.41 | 58.41 | 58.41 Mbytes
+   Step          Temp          Press         Density         KinEng         PotEng         TotEng         E_vdwl         E_coul         E_pair         E_bond        E_angle        E_dihed        E_impro         v_rxn1    
+         0   300            20846.121      0.40651355     103.73219      592.94353      696.67572      37.332293      56.599164      29.435822      167.46731      463.66324     -62.87278      -4.7500576      0            
+      2000   304.08723      5450.0517      0.40651355     105.14545      458.20214      563.34759      29.026589      78.550125      43.307905      53.9678        405.6519      -44.880849      0.15538277     1            
+      4000   283.78768     -2407.4549      0.40651355     98.126392      449.23022      547.35661      19.359292      80.038727      35.198415      42.723579      405.45587     -34.003683     -0.14396416     1            
+      6000   296.64561     -3920.857       0.40651355     102.57233      440.73034      543.30266      15.581605      79.332194      30.806168      38.776326      404.08656     -32.216909     -0.72180906     1            
+WARNING: Bond/angle/dihedral extent > half of periodic box length (src/domain.cpp:936)
+Loop time of 3.09237 on 16 procs for 6000 steps with 117 atoms
+
+Performance: 83.819 ns/day, 0.286 hours/ns, 1940.259 timesteps/s, 227.010 katom-step/s
+103.1% CPU use with 1 MPI tasks x 16 OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 1.6753     | 1.6753     | 1.6753     |   0.0 | 54.18
+Bond    | 0.95113    | 0.95113    | 0.95113    |   0.0 | 30.76
+Kspace  | 0.22723    | 0.22723    | 0.22723    |   0.0 |  7.35
+Neigh   | 0.058763   | 0.058763   | 0.058763   |   0.0 |  1.90
+Comm    | 0.063199   | 0.063199   | 0.063199   |   0.0 |  2.04
+Output  | 0.003276   | 0.003276   | 0.003276   |   0.0 |  0.11
+Modify  | 0.085702   | 0.085702   | 0.085702   |   0.0 |  2.77
+Other   |            | 0.02774    |            |       |  0.90
+
+Nlocal:            117 ave         117 max         117 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:           3129 ave        3129 max        3129 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:          23366 ave       23366 max       23366 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 23366
+Ave neighs/atom = 199.7094
+Ave special neighs/atom = 6.3931624
+Neighbor list builds = 86
+Dangerous builds = 0
+write_data      ${myid}.data
+write_data      UPDATE_ME.data
+System init for write_data ...
+PPPM initialization ...
+  using 12-bit tables for long-range coulomb (src/kspace.cpp:342)
+  G vector (1/distance) = 0.19778512
+  grid = 8 5 4
+  stencil order = 5
+  estimated absolute RMS force accuracy = 0.0038341073
+  estimated relative force accuracy = 1.15463e-05
+  using double precision FFTW3
+  3d grid and FFT values/proc = 1430 160
+Generated 66 of 66 mixed pair_coeff terms from sixthpower/sixthpower mixing rule
+
+
+#------------Generalized Method to write LAMMPS datafiles as a function of crosslink density------------
+# Caclulate crosslink density
+#variable      rxn1 equal f_myrxn[1]
+#variable      rxn2 equal f_myrxn[2]
+
+#variable      trxn equal v_rxn1+v_rxn2 # Sum all rxns
+#variable      pxld equal 100*(v_trxn/250) # Assume 250 is max count of the sum of rxn1 and rxn2
+
+# Set run flags to "turn on" and "shut off" after writing a file
+#variable      pxld10 equal 0 # 10% fileflag
+#variable      pxld20 equal 0 # 20% fileflag
+#variable      pxld30 equal 0 # 30% fileflag
+#variable      pxld40 equal 0 # 40% fileflag
+#variable      pxld50 equal 0 # 50% fileflag
+#variable      pxld60 equal 0 # 60% fileflag
+#variable      pxld70 equal 0 # 70% fileflag
+#variable      pxld80 equal 0 # 80% fileflag
+#variable      pxld90 equal 0 # 90% fileflag
+
+# Set check frequency (every N-timesteps check if v_pxld is eligable to be written)
+#variable      check equal 100   # check every N-timesteps (if to small check may not occur as quick as the reactions are progressing)
+#variable      Run   equal 2     # run time in ns
+#variable      i     equal (v_Run*1000000/dt)/v_check # calculate number of for loop iterations
+
+# Run simulation using LAMMPS for loop
+#label loop
+#variable a loop $i
+#run ${check}
+
+# crosslink density percent check
+#if "${pxld}>=9   && ${pxld}<=13 && ${pxld10}==0" then "write_data ${myid}_pxld_${pxld}.data" "variable      xld10 equal 1" # 10%
+#if "${pxld}>=19  && ${pxld}<=23 && ${pxld20}==0" then "write_data ${myid}_pxld_${pxld}.data" "variable      xld20 equal 1" # 20%
+#if "${pxld}>=29  && ${pxld}<=33 && ${pxld30}==0" then "write_data ${myid}_pxld_${pxld}.data" "variable      xld30 equal 1" # 30%
+#if "${pxld}>=39  && ${pxld}<=43 && ${pxld40}==0" then "write_data ${myid}_pxld_${pxld}.data" "variable      xld40 equal 1" # 40%
+#if "${pxld}>=49  && ${pxld}<=53 && ${pxld50}==0" then "write_data ${myid}_pxld_${pxld}.data" "variable      xld50 equal 1" # 50%
+#if "${pxld}>=59  && ${pxld}<=63 && ${pxld60}==0" then "write_data ${myid}_pxld_${pxld}.data" "variable      xld60 equal 1" # 60%
+#if "${pxld}>=69  && ${pxld}<=73 && ${pxld70}==0" then "write_data ${myid}_pxld_${pxld}.data" "variable      xld70 equal 1" # 70%
+#if "${pxld}>=79  && ${pxld}<=83 && ${pxld80}==0" then "write_data ${myid}_pxld_${pxld}.data" "variable      xld80 equal 1" # 80%
+#if "${pxld}>=89  && ${pxld}<=93 && ${pxld90}==0" then "write_data ${myid}_pxld_${pxld}.data" "variable      xld90 equal 1" # 90%
+
+#next a
+#jump SELF loop
+#label break
+#print "***ALL DONE***"
+#write_data  ${myid}_pxld_${pxld}_end_of_loop.data

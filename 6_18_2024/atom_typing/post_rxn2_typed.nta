@@ -1,0 +1,30 @@
+New type assignment file for post_rxn2_typed.data > atom_typing v1.10 / 10 May 2024 w/PCFF-IFF atom-types
+style id
+1      cp  # EDGE              
+2      oc              
+3      c2              
+4      c1              
+5      oh              
+6      c2  # EDGE              
+7      cp  # near-EDGE              
+8      cp  # EDGE              
+9      c3  # EDGE             
+10     cp  # near-EDGE              
+11     cp  # near-EDGE              
+12     nn              
+13     cp  # EDGE              
+14     c2              
+15     hc              
+16     hc              
+17     hc              
+18     ho              
+19     hn              
+20     hc              
+21     hc    
+
+edge id  
+1  cp cp
+6  hc hc c3  
+8  cp hc
+9  hc hc hc
+13 cp nn
